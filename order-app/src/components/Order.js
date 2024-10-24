@@ -45,7 +45,9 @@ const Order = ({ cartItems, clickCount }) => {
               item: cartItem.name,
               quantity: cartItem.quantity,
               price: cartItem.price,
-              status: '주문'
+              status: '주문',
+              status_pay: '결제진행',
+              link_stock: cartItem.id
             }
           }))
         })
