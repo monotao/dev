@@ -1,0 +1,33 @@
+/* src/components/ProductList.css */
+
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  padding: 0.1px;
+}
+
+.product-list-item {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.product-list-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.product-list-item .product-name {
+  font-size: 1.2em;
+  margin-bottom: 8px;
+}
+
+.product-list-item .product-price {
+  font-size: 1.1em;
+  font-weight: bold;
+}

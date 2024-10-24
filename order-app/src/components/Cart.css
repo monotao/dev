@@ -1,0 +1,77 @@
+/* src/components/Cart.css */
+
+.cart {
+  flex: 2;
+  padding: 20px;
+}
+
+.cart-title {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.clear-cart-button {
+  padding: 4px 8px;
+  background-color: #d9534f;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.clear-cart-button:hover {
+  background-color: #c9302c;
+}
+
+.cart-empty {
+  font-size: 1.2em;
+}
+
+.cart-list {
+  list-style: none;
+  padding: 0;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 10px;
+}
+
+.remove-button {
+  font-size: 1.2em;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.item-name {
+  flex: 3;
+  font-size: 1.4em;
+}
+
+.item-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 2;
+}
+
+.cart-button {
+  padding: 5px 10px;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+.item-quantity {
+  font-size: 1.2em;
+}
+
+.item-price {
+  flex: 1;
+  font-size: 1.4em;
+  text-align: right;
+}
