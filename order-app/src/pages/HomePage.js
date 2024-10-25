@@ -9,10 +9,10 @@ import { faHome, faCreditCard } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
 
 const products = [
-  { id: 1, name: '페퍼로니피자(1조각)', price: 2500, image: '/images/pepperoni_pizza_slice.jpg' },
-  { id: 2, name: '어니언피자(1조각)', price: 3000, image: '/images/onion_pizza_slice.jpg' },
-  { id: 3, name: '페퍼로니피자', price: 11000, image: '/images/pepperoni_pizza.jpg' },
-  { id: 4, name: '어니언피자', price: 13900, image: '/images/onion_pizza.jpg' },
+  { id: 1, name: '페퍼로니피자 (한판)', price: 10000, image: '/images/pepperoni_pizza.jpg' },
+  { id: 2, name: '어니언치즈피자 (한판)', price: 10000, image: '/images/onion-cheese_pizza.jpg' },
+  { id: 3, name: '페퍼로니피자 (조각)', price: 3000, image: '/images/pepperoni_pizza_slice.jpg' },
+  { id: 4, name: '어니언치즈피자 (조각)', price: 3000, image: '/images/onion-cheese_pizza_slice.jpg' },
 ];
 
 const HomePage = () => {

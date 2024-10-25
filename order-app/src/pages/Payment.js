@@ -25,15 +25,13 @@ const Payment = () => {
           <img src="/images/qr_kakao.jpg" alt="qr_kakao" className="payment-image" />
         </div>
         <div className="payment-card">
-          <div className="payment-card-title">네이버 QR 코드</div>
-          <img src="/images/qr_naver.jpg" alt="qr_naver" className="payment-image" />
-        </div>
-        <div className="payment-card">
           <div className="payment-card-title">카카오 오픈채팅</div>
           <img src="/images/kakao_openchat.jpg" alt="kakao_openchat" className="payment-image" />
           <div className="payment-card-description">피자가 완성되면 알려드려요</div>
         </div>
       </div>
+      <h1>계좌번호</h1>
+      <h1>카카오뱅크 3333-31-9596990 박상원</h1>
     </div>
   );
 };

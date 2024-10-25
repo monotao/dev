@@ -4,8 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import './Order.css';
 import authData from '../config/authorization.json'; // JSON 파일을 import
 
-const AIRTABLE_API_KEY = authData.airtable_pizza;
-
 let lastOrderNo = parseInt(localStorage.getItem('lastOrderNo') || '0', 10);
 
 const Order = ({ cartItems, clickCount }) => {
@@ -31,7 +29,11 @@ const Order = ({ cartItems, clickCount }) => {
   const handleOrder = async () => {
     try {
       const orderNo = lastOrderNo + 1;
-      const response = await fetch('https://api.airtable.com/v0/appFIyuKLcuwB9jmV/order', {
+      const record_ids = ["recQv0o68TnE1Q5tM", "rechiKpcLwST1JDCI", "recQnBDJeT9lV3Sy3", "recHQuQBhwNGSyv3c"];
+      const AIRTABLE_API_KEY = authData.airtable_pizza;
+      const BASE_ID = 'appFIyuKLcuwB9jmV';
+      const TABLE_NAME = 'order';
+      const response = await fetch(`https://api.airtable.com/v0/${BASE_ID}/${TABLE_NAME}`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${AIRTABLE_API_KEY}`,
@@ -44,10 +46,10 @@ const Order = ({ cartItems, clickCount }) => {
               item_id: cartItem.id,
               item: cartItem.name,
               quantity: cartItem.quantity,
-              price: cartItem.price,
+              price: cartItem.price * cartItem.quantity,
               status: '주문',
-              status_pay: '결제진행',
-              link_stock: cartItem.id
+              status_pay: '결제진행중',
+              link_stock: [record_ids[cartItem.id - 1]]
             }
           }))
         })
