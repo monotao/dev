@@ -9,6 +9,7 @@ logging.basicConfig(
     filename="ocr_detect.log",
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(message)s",
+    encoding="utf-8",
 )
 
 def main():

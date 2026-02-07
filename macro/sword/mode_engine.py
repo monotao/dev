@@ -1,7 +1,7 @@
 import time
 import re
 import logging
-from input import send_command
+from input import send_command, send_command_korean
 from parser import detect_hidden_weapon, should_enhance_hidden
 from state import MacroState
 from constants import MODE_LABEL
@@ -77,9 +77,11 @@ def handle_enhance_cycle(
                 f"[loop={state.loop}] [{mode_label(state)}] 목표 달성 → {hidden_name} +{level} 판매",
                 redact_hidden=True,
             )
-            send_command(";s")
+            send_command_korean("/판")
+            # send_command(";s")
             time.sleep(0.3)
-            send_command(";g")
+            send_command_korean("/강")
+            # send_command(";g")
         elif auto_pause:
             log_info(
                 f"[loop={state.loop}] [{mode_label(state)}] 목표 달성 → {hidden_name} +{level} 일시중지",
@@ -104,12 +106,14 @@ def handle_enhance_cycle(
                 f"[loop={state.loop}] [{mode_label(state)}] 히든 강화 시도: {hidden_name} +{level} → +{state.target}",
                 redact_hidden=True,
             )
-            send_command(";g")
+            send_command_korean("/강")
+            # send_command(";g")
         else:
             log_info(
                 f"[loop={state.loop}] [{mode_label(state)}] 강화 시도: +{level} → +{state.target}"
             )
-            send_command(";g")
+            send_command_korean("/강")
+            # send_command(";g")
 
         state.loop += 1
 
@@ -118,9 +122,11 @@ def handle_enhance_cycle(
         log_info(
             f"[loop={state.loop}] [{mode_label(state)}] 히든무기 탐지중..."
         )
-        send_command(";s")
+        send_command_korean("/판")
+        # send_command(";s")
         time.sleep(0.3)
-        send_command(";g")
+        send_command_korean("/강")
+        # send_command(";g")
         state.prev_hidden_item = None
         state.last_level = None
         state.loop = 1
